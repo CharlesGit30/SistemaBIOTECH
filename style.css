@@ -13,7 +13,7 @@
 }
 
 body {
-    background-image: url(imagens/background.avif);
+    background-color: #f5f5dc;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +54,7 @@ header {
 }
 
 .logo img {
-    width: 80px;
+    width: 100px;
     border-radius: 50%;
     box-shadow: var(--sombra);
 }
@@ -359,9 +359,7 @@ table td {
     border-radius: 15px;
     box-shadow: var(--sombra);
     text-align: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.95);
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -422,7 +420,7 @@ table td {
     margin-bottom: 20px;
 }
 
-.caixa button {
+.caixa .btn {
     width: auto;
     padding: 10px 25px;
 }

@@ -20,7 +20,7 @@ $nomeUsuario = $logado ? $_SESSION["nome"] : "";
 
 <header>
     <div class="logo">
-    <a href="index.php"><img src="logo.jpg" width="100px" alt="Foto da Logo"></a>    
+    <a href="index.php"><img src="logo.jpg" alt="Foto da Logo"></a>    
     </div>
 
 
