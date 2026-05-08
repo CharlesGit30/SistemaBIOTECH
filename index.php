@@ -28,20 +28,26 @@
 
   <div class="carrossel">
   <div class="logos">
-    <a href="#"><img src="./imagens/logo1.png" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo2.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo3.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo4.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo5.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo1.png" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo2.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo3.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo4.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo5.webp" alt="CECMED"></a>  <a href="#"><img src="./imagens/logo1.png" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo2.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo3.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo4.webp" alt="CECMED"></a>
-    <a href="#"><img src="./imagens/logo5.webp" alt="CECMED"></a>
+    <a href="#"><img src="./imagens/logo1.png" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo2.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo4.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo5.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo1.png" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo2.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo4.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo5.webp" alt="logo do carrossel"></a>  
+    <a href="#"><img src="./imagens/logo1.png" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo2.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo4.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo5.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo1.png" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo2.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo4.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo5.webp" alt="logo do carrossel"></a>
+     <a href="#"><img src="./imagens/logo1.png" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo2.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo4.webp" alt="logo do carrossel"></a>
+    <a href="#"><img src="./imagens/logo5.webp" alt="logo do carrossel"></a>
   </div>
 </div>
     
@@ -66,6 +72,8 @@
       <a href="listar_medicamentos.php" class="btn btn-add">Medicamentos</a>
     </div>
 </div>
+
+<br><br><br><br><br>
 
 
    <?php include "footer.php" ?>

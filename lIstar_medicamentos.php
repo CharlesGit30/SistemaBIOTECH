@@ -17,10 +17,11 @@ $resultado = $conexao->query("SELECT * FROM medicamentos ORDER BY nome DESC");
 </head>
 <body>
 
-    <?php include "header.php" ?>
+<?php include "header.php" ?>
 
 <div class="container">
     <a href="criar_medicamentos.php" class="novo">Novo Medicamento</a>
+    
     <h2>Medicamentos Registrados</h2>
 
     <table>
@@ -47,9 +48,8 @@ $resultado = $conexao->query("SELECT * FROM medicamentos ORDER BY nome DESC");
                     echo "<td>" . $row['tipo'] . "</td>";
                     echo "<td>" . $row['descricao'] . "</td>";
                     echo "<td>R$ " . $precoBR . "</td>";
-                    echo "<td>
-                            <a href='editar_medicamentos.php?id=" . $row['id'] . "' class='btn btn-edit'>Editar</a>
-                            <a href='excluir_medicamentos.php?id=" . $row['id'] . "' class='btn btn-del' onclick='return confirm(\"Tem certeza?\")'>Excluir</a>
+                    echo "<td> <a href='editar_medicamentos.php?id=" . $row['id'] . "' class='btn btn-edit'>Editar</a>
+                               <a href='excluir_medicamentos.php?id=" . $row['id'] . "' class='btn btn-del' onclick='return confirm(\"Tem certeza?\")'>Excluir</a>
                           </td>";
                     echo "</tr>";
                 }

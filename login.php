@@ -7,7 +7,7 @@ $erro = "";
 
 if (isset($_POST["enviar"])) {
 
-    $email = trim($_POST["email"]);
+    $email = $_POST["email"];
     $senha = $_POST["senha"];
 
 
@@ -36,7 +36,7 @@ if (isset($_POST["enviar"])) {
             $erro = "Senha incorreta!";
         }
     } else {
-        $erro = "E-mail não cadastrado!";
+        $erro = "E-mail não encontrado!";
     }
 
     $buscar->close();
@@ -64,11 +64,11 @@ if (isset($_POST["enviar"])) {
     <form method="POST">
         <div class="form-dados">
             <label>E-mail:</label>
-            <input type="email" name="email" placeholder="biotech789@gmail.com" value="biotech789@gmail.com" required>
+            <input type="email" name="email" value="biotech789@gmail.com" required>
         </div>
         <div class="form-dados">
             <label>Senha:</label>
-            <input type="password" name="senha" placeholder="123456" required>
+            <input type="password" name="senha" required>
         </div>
         <button type="submit" name="enviar">Entrar no Sistema</button>
     </form>
