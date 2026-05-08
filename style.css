@@ -60,19 +60,14 @@ header {
 }
 
 .navbar a {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
-    color: var(--cor-fundo);
-    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: var(--sombra);
     transition: background-color 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: #04471e;
-}
+}
 
 .icones {
     display: flex;
