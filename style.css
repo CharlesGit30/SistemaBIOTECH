@@ -13,13 +13,20 @@
 }
 
 body {
-    background-image: url(background.avif);
+    background-image: url(imagens/background.avif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding-top: 120px;
     padding: 120px 20px 20px;
+}
+
+/* Para telas pequenas, como Raspberry Pi */
+@media (max-width: 1024px) {
+    body {
+        background-size: contain;
+        background-attachment: scroll;
+    }
 }
 
 :root {
@@ -62,12 +69,14 @@ header {
 .navbar a {
     font-size: 18px;
     font-weight: 500;
-    color: var(--cor-fundo);
+    color: var(--cor-fundo);
+
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: var(--sombra);
     transition: background-color 0.3s ease;
-}
+}
+
 
 .icones {
     display: flex;
