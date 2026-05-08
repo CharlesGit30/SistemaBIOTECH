@@ -51,19 +51,19 @@
     <div class="caixa caixa1">
       <h2 class="titulo-caixa">Novo Laudo</h2>
       <p class="texto-caixa">Cadastre novos laudos de forma rápida e segura no sistema.</p>
-      <button type="button" onclick="location.href='criar_laudo.php'">Novo Laudo</button>
+      <a href="criar_laudo.php" class="btn btn-add">Novo Laudo</a>
     </div>
 
     <div class="caixa caixa2">
       <h2 class="titulo-caixa">Mostrar Laudos</h2>
       <p class="texto-caixa">Consulte, edite ou exclua todos os laudos já cadastrados.</p>
-      <button type="button" onclick="location.href='listar_laudo.php'">Mostrar Laudos</button>
+      <a href="listar_laudo.php" class="btn btn-add">Mostrar Laudos</a>
     </div>
 
     <div class="caixa caixa3">  
       <h2 class="titulo-caixa">Medicamentos</h2>
       <p class="texto-caixa">Gerencie o cadastro e a lista de medicamentos do sistema.</p>
-      <button type="button" onclick="location.href='listar_medicamentos.php'">Medicamentos</button>
+      <a href="listar_medicamentos.php" class="btn btn-add">Medicamentos</a>
     </div>
 </div>
 
