@@ -1,11 +1,11 @@
 const swiper = new Swiper('.mySwiper', {
-       // Opções básicas
-       loop: true, // Repete no final
+       
+       loop: true, 
        autoplay: {
-         delay: 2500, // Tempo troca (2,5 segundos)
-         disableOnInteraction: false, // Continua após clicar/arrastar
+         delay: 2500, 
+         disableOnInteraction: false, 
        },
-       // Se quiser navegação e paginação
+       
        pagination: {
          el: '.swiper-pagination',
          clickable: true,
