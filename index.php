@@ -22,9 +22,9 @@
 
   <div class="swiper mySwiper">
      <div class="swiper-wrapper">
-       <div class="swiper-slide slide1"><img src=""></div>
-       <div class="swiper-slide slide2"><img src=""></div>
-       <div class="swiper-slide slide3"><img src=""></div>
+       <div class="swiper-slide slide1"><img src="/imagens/banner1.png"></div>
+       <div class="swiper-slide slide2"><img src="/imagens/banner2.png"></div>
+       <div class="swiper-slide slide3"><img src="/imagens/banner3.png"></div>
      </div>
      
      <div class="swiper-pagination"></div>
