@@ -18,11 +18,18 @@
 
     <?php include "header.php"; ?>
 
-  <div class="menu">
-     <div class="banner-principal">
-       <img src="./imagens/banner.png"></img>
+  
+
+  <div class="swiper mySwiper">
+     <div class="swiper-wrapper">
+       <div class="swiper-slide slide1"><img src=""></div>
+       <div class="swiper-slide slide2"><img src=""></div>
+       <div class="swiper-slide slide3"><img src=""></div>
      </div>
-  </div>
+     
+     <div class="swiper-pagination"></div>
+     <div class="swiper-button-next"></div>
+     <div class="swiper-button-prev"></div>
 
 
 
