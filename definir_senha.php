@@ -1,48 +1,76 @@
 <?php
 include "config.php";
 
-// Dados do administrador
-$nome = "Administrador";
-$email = "biotech789@gmail.com";
-$senha = "123456"; // Você pode trocar por qualquer senha que quiser
 
-// Criptografa a senha do jeito exato que o PHP reconhece
-$senhaCripto = password_hash($senha, PASSWORD_DEFAULT);
+if (isset($_POST['cadastrar'])) {
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
 
-// Verifica se o usuário já existe
-$verificar = $conexao->prepare("SELECT id FROM usuarios WHERE email = ?");
-$verificar->bind_param("s", $email);
-$verificar->execute();
-$verificar->store_result();
+    $cadastrar = $conexao->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $cadastrar->bind_param("s", $email);
+    $cadastrar->execute();
+    $cadastrar->store_result();
 
-if ($verificar->num_rows > 0) {
-    // Atualiza se já existir
-    $atualizar = $conexao->prepare("UPDATE usuarios SET nome=?, senha=? WHERE email=?");
-    $atualizar->bind_param("sss", $nome, $senhaCripto, $email);
-    if ($atualizar->execute()) {
-        echo "✅ Senha definida com sucesso!<br>";
-        echo "📧 E-mail: biotech789@gmail.com<br>";
-        echo "🔑 Senha: 123456<br><br>";
-        echo "<a href='login.php'>Ir para o login</a>";
+    if ($cadastrar->num_rows > 0) {
+        echo "E-mail já cadastrado!";
     } else {
-        echo "❌ Erro: " . $conexao->error;
+
+        $cadastrar = $conexao->prepare(
+            "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)"
+        );
+
+        $cadastrar->bind_param("sss", $nome, $email, $senha);
+
+        if ($cadastrar->execute()) {
+            header("Location: login.php");
+            exit;
+            echo "Cadastro realizado com sucesso!";
+        } else {
+            echo "Erro ao cadastrar!";
+        }
     }
-    $atualizar->close();
-} else {
-    // Cria o usuário se não existir
-    $cadastrar = $conexao->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-    $cadastrar->bind_param("sss", $nome, $email, $senhaCripto);
-    if ($cadastrar->execute()) {
-        echo "✅ Usuário e senha criados com sucesso!<br>";
-        echo "📧 E-mail: biotech789@gmail.com<br>";
-        echo "🔑 Senha: 123456<br><br>";
-        echo "<a href='login.php'>Ir para o login</a>";
-    } else {
-        echo "❌ Erro: " . $conexao->error;
-    }
+
     $cadastrar->close();
+    $conexao->close();
 }
-
-$verificar->close();
-$conexao->close();
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do Profissional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <?php include "header.php" ?>
+
+<div class="container">
+<h2 class="titulo_novolaudo">Cadastrar Profissional</h2>
+<form method="POST">
+    <input type="text" name="nome" placeholder="Nome" required><br><br>
+    <input type="email" name="email" placeholder="E-mail" required><br><br>
+    <input type="password" name="senha" placeholder="Senha" required><br><br>
+    <button type="submit" name="cadastrar">Cadastrar</button>
+</form>
+</div>
+
+<?php include "footer.php" ?>
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+</body>
+</html>
+

@@ -1,7 +1,8 @@
 <?php
 include "config.php";
+include "protecao_login.php";
 
-$id = $_GET['id'];
+$id = (int)$_GET['id'];
 $editar = $conexao->query("SELECT * FROM laudos WHERE id=$id")->fetch_assoc();
 
 if(isset($_POST["enviar"])) {
@@ -24,7 +25,7 @@ if(isset($_POST["enviar"])) {
     );
 
     if($atualizar->execute()){
-        header("Location: listar.php");
+        header("Location: listar_laudo.php");
         exit;
     } else {
       echo "Falha ao atualizar: " . $conexao->error;
@@ -100,8 +101,8 @@ if(isset($_POST["enviar"])) {
             <textarea name="prescricao" rows="5"><?php echo $editar['prescricao']; ?></textarea>
         </div>
 
-        <button type="submit" name="enviar">Salvar Alterações</button>
-        <a href="listar.php" class="btn btn-voltar">Voltar para Lista</a>
+        <button type="submit" name="enviar">Salvar Alterações</button><br><br>
+        <a href="listar_laudo.php" class="botao-voltar">Voltar para Lista</a>
     </form>
 </div>
 

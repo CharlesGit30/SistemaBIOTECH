@@ -1,7 +1,11 @@
-<?php
-
-$logado = isset($_SESSION["logado"]) && $_SESSION["logado"] === true;
-$nomeUsuario = $logado ? $_SESSION["nome"] : "";
+<?php   
+if (isset($_SESSION["logado"]) && $_SESSION["logado"]) {
+    $logado = true;
+    $nomeUsuario = $_SESSION["nome"];
+} else {
+    $logado = false;
+    $nomeUsuario = "";
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,33 +23,30 @@ $nomeUsuario = $logado ? $_SESSION["nome"] : "";
 <body>
 
 <header>
+
     <div class="logo">
-    <a href="index.php"><img src="logo.jpg" alt="Foto da Logo"></a>    
+    <a href="index.php"><img src="logo.jpg" alt="Foto da Logo"></a>
     </div>
 
-
-    <?php if ($logado):  ?>
-    <div class="navbar">
-        <a href="listar_laudo.php">Listar Laudos</a>
-        <a href="criar_laudo.php">Novo Laudo</a>
-        <a href="listar_medicamentos.php">Medicamentos</a>
-    </div>
+    <?php if ($logado): ?>
+        <div class="navbar">
+            <a href="listar_laudo.php">Listar Laudos</a>
+            <a href="criar_laudo.php">Novo Laudo</a>
+        </div>
     <?php endif; ?>
 
     <div class="icones">
         <?php if ($logado): ?>
-
-            <span>
-                <?php echo $nomeUsuario; ?>
-            </span>
+            <span><?= $nomeUsuario ?></span>
             <a href="sair.php" title="Sair do sistema">
-                <i class='bx bx-exit'></i>
+            <i class='bx bx-exit'></i>
             </a>
         <?php else: ?>
-
             <a href="login.php" title="Fazer Login">
                 <i class='bx bx-user'></i>
             </a>
         <?php endif; ?>
+
     </div>
+
 </header>

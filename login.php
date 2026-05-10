@@ -4,39 +4,28 @@ include "config.php";
 
 $erro = "";
 
-
 if (isset($_POST["enviar"])) {
 
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-
     $buscar = $conexao->prepare("SELECT id, nome, senha FROM usuarios WHERE email = ?");
     $buscar->bind_param("s", $email);
     $buscar->execute();
+
     $resultado = $buscar->get_result();
+    $dados = $resultado->fetch_assoc();
 
-    if ($resultado->num_rows === 1) {
-        $dados = $resultado->fetch_assoc();
+    if ($dados && password_verify($senha, $dados["senha"])) {
 
+        $_SESSION["logado"] = true;
+        $_SESSION["nome"] = $dados["nome"];
 
-        if (password_verify($senha, $dados["senha"])) {
+        header("Location: index.php");
+        exit;
 
-
-            if ($email === "biotech789@gmail.com") {
-                $_SESSION["logado"] = true;
-                $_SESSION["nome"]   = $dados["nome"];
-                header("Location: index.php");
-                exit;
-            } else {
-                $erro = "Acesso permitido apenas para o Administrador!";
-            }
-
-        } else {
-            $erro = "Senha incorreta!";
-        }
     } else {
-        $erro = "E-mail não encontrado!";
+        $erro = "E-mail ou senha incorretos!";
     }
 
     $buscar->close();
@@ -64,16 +53,18 @@ if (isset($_POST["enviar"])) {
     <form method="POST">
         <div class="form-dados">
             <label>E-mail:</label>
-            <input type="email" name="email" value="biotech789@gmail.com" required>
+            <input type="email" name="email" required>
         </div>
         <div class="form-dados">
             <label>Senha:</label>
             <input type="password" name="senha" required>
         </div>
-        <button type="submit" name="enviar">Entrar no Sistema</button>
+        <button type="submit" name="enviar">Entrar no Sistema</button><br><br>
+        <a href="definir_senha.php" class="cadastro-adm">Cadastrar Profissional</a>
     </form>
 </div>
 
+<?php include "footer.php" ?>
 
 <div vw class="enabled">
     <div vw-access-button class="active"></div>

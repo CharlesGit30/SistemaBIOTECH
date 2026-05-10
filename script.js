@@ -1,17 +1,24 @@
-const swiper = new Swiper('.mySwiper', {
-       
-       loop: true, 
-       autoplay: {
-         delay: 2500, 
-         disableOnInteraction: false, 
-       },
-       
-       pagination: {
-         el: '.swiper-pagination',
-         clickable: true,
-       },
-       navigation: {
-         nextEl: '.swiper-button-next',
-         prevEl: '.swiper-button-prev',
-       },
-     });
+$(document).ready(function () {
+
+    $('#tabela').DataTable({
+
+        language: {
+            url: 'https://cdn.datatables.net/plug-ins/1.13.8/i18n/pt-BR.json'
+        },
+
+        pageLength: 10
+    });
+
+});
+
+
+const configTabela = {
+    columnDefs: [
+        { targets: 0, orderData: [0, 1] },
+        { targets: 1, orderData: [1, 0] },
+        { targets: 4, orderData: [4, 0] }
+    ]
+};
+
+new DataTable('#tabela1', configTabela);
+new DataTable('#tabela2', configTabela);
