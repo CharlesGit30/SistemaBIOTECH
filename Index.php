@@ -80,8 +80,7 @@
 </div>
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
 <script src="https://cdn.datatables.net/2.3.8/js/dataTables.min.js"></script>
 </body>
 </html>
