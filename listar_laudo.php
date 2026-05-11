@@ -63,7 +63,7 @@ $consultar = $conexao->query("SELECT * FROM laudos ORDER BY id DESC");
                     <td><?= $row['conteudo_laudo']?></td>
                     <td><?= $row['prescricao']?></td>
                     <td class="acoes"><a class="botao-editar" href="editar_laudo.php?id=<?= $row['id'] ?>">Editar</a>
-                        <a class="botao-inoperar" href="excluir_laudo.php?id=<?= $row['id'] ?>">Inoperar</a>
+                        <a class="botao-inoperar" href="excluir_laudo.php?id=<?= $row['id'] ?>">Inativar</a>
 
 </td>
             <?php endwhile; ?>
