@@ -2,7 +2,6 @@
 session_start();
 include "config.php";
 
-$erro = "";
 
 if (isset($_POST["enviar"])) {
 
