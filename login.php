@@ -24,7 +24,7 @@ if (isset($_POST["enviar"])) {
         exit;
 
     } else {
-        $erro = "E-mail ou senha incorretos!";
+        echo "E-mail ou senha incorretos!";
     }
 
     $buscar->close();
