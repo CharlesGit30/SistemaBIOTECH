@@ -2,7 +2,7 @@
 
  include "config.php";
 
- $id = $_GET['id'];
+ $id = (int)$_GET['id'];
 
  $excluir = $conexao->prepare("DELETE FROM laudos   WHERE id = ?");
 
